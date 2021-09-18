@@ -1,13 +1,18 @@
+*{
+    font-size: 1.2rem;
+}
+
 .img-responsive{
     display: inline-block;
     width: 17% ;
     height: auto;
 }
+
 ul{
     list-style: none;
 }
 
-#SignOut{
+#sign-out{
     display: inline-block;
     position: absolute;
     top: 22px;
