@@ -41,7 +41,7 @@ export function createStudentID(studentId: string, dayFees: DayFees[]): bool {
 
 export function uploadStudentCertificate(studentId:string,certificate: Certificates): bool {
   const studentCertificates = new PersistentMap<string,PersistentVector<Certificates | null>>('m');
-  const data = studentCertificates.get(studentId);
+  const data = studentCertificates.getSome(studentId);
   if(data !==null){
     data.push(certificate);
   }
