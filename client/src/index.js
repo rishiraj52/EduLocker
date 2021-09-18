@@ -6,6 +6,10 @@ import getConfig from './config'
 const { networkId } = getConfig(process.env.NODE_ENV || 'development')
 
 // JS code here
+document.getElementById('sign-out').addEventListener('click',(e)=>{
+  e.preventDefault();
+  logout();
+})
 document.getElementById("login").addEventListener("click", async (e) => {
   e.preventDefault();
   console.log("The button is clicked: ", accountId);
