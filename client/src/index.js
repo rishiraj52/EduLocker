@@ -1,5 +1,5 @@
 import "regenerator-runtime/runtime";
-import studentDashboard from "./html/student-dashboard.html";
+import studentDashboard from "./HTML/student-dashboard.html";
 
 import { initContract, login, logout } from "./utils";
 
@@ -16,31 +16,31 @@ document.getElementById("login").addEventListener("click", async (e) => {
   console.log("The button is clicked: ", accountId);
   login();
 });
-document.getElementById("log-out").addEventListener("click", async (e) => {
-  e.preventDefault();
-  const ob = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify({
-      userId: accountId,
-    }),
-  };
-  try {
-    const res = await fetch("http://localhost:5000/getRole/", ob);
-    // console.log("res: ",res.json());
-    const js = await res.json();
-    console.log("response: ", js);
-    if (js.role == "student") {
-      window.location.href = studentDashboard;
-      document.write(studentDashboard)
-    } else window.location.replace("/html/CBSE-dashboard.html");
-  } catch (error) {
-    console.log("err: ", error);
-  }
-});
+// document.getElementById("log-out").addEventListener("click", async (e) => {
+//   e.preventDefault();
+//   const ob = {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//       Accept: "application/json",
+//     },
+//     body: JSON.stringify({
+//       userId: accountId,
+//     }),
+//   };
+//   try {
+//     const res = await fetch("http://localhost:5000/getRole/", ob);
+//     // console.log("res: ",res.json());
+//     const js = await res.json();
+//     console.log("response: ", js);
+//     if (js.role == "student") {
+//       window.location.href = studentDashboard;
+//       document.write(studentDashboard)
+//     } else window.location.replace("/html/CBSE-dashboard.html");
+//   } catch (error) {
+//     console.log("err: ", error);
+//   }
+// });
 
 // `nearInitPromise` gets called on page load
 window.nearInitPromise = initContract()

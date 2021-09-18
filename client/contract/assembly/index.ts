@@ -11,43 +11,49 @@ export function getStudentCertificate(studentId: string): PersistentVector<Certi
   );
   return data.get(studentId);
 }
-// export function createStudentID(studentId: string, dayFees: DayFees[]): bool {
-//   try {
-//     const data = new PersistentVector<DayFees>("m");
-//     for (let index = 0; index < dayFees.length; index++) {
-//       data.push(dayFees[index]);
-//     }
-//     const studentData = new PersistentMap<string, PersistentVector<DayFees>>(
-//       "m"
-//     );
-//     studentData.set(studentId, data);
-//     // setStudentCrtificateAsNull(studentId);
-//     return true;
-//   } catch (error) {
-//     logging.log(`error while creating studentID in contract ${error}`);
-//     return false;
-//   }
-//   return false;
-// }
-// function setStudentCrtificateAsNull(studentId: string):void {
-//   const temp = new PersistentVector<Certificates | null>('m');
-//   temp.push(null);
-//   const studentCertificates = new PersistentMap<string, PersistentVector<Certificates | null>>('m');
-//   studentCertificates.set(studentId, temp);
-// }
-// export function uploadStudentCertificate(studentId:string,certificate: Certificates): bool {
+export function createStudentID(studentId: string, dayFees: DayFees[]): bool {
+  const data = new PersistentVector<DayFees>("m");
+    for (let index = 0; index < dayFees.length; index++) {
+      data.push(dayFees[index]);
+    }
+    const studentData = new PersistentMap<string, PersistentVector<DayFees>>(
+      "m"
+    );
+    studentData.set(studentId, data);
+    // setStudentCrtificateAsNull(studentId);
+    return true;
+  // try {
+  //   const data = new PersistentVector<DayFees>("m");
+  //   for (let index = 0; index < dayFees.length; index++) {
+  //     data.push(dayFees[index]);
+  //   }
+  //   const studentData = new PersistentMap<string, PersistentVector<DayFees>>(
+  //     "m"
+  //   );
+  //   studentData.set(studentId, data);
+  //   // setStudentCrtificateAsNull(studentId);
+  //   return true;
+  // } catch (error) {
+  //   logging.log(`error while creating studentID in contract ${error}`);
+  //   return false;
+  // }
+}
+
+export function uploadStudentCertificate(studentId:string,certificate: Certificates): bool {
+  const studentCertificates = new PersistentMap<string,PersistentVector<Certificates | null>>('m');
+  const data = studentCertificates.get(studentId);
+  if(data !==null){
+    data.push(certificate);
+  }
+  studentCertificates.set(studentId, data!);
+  return true;
   
-//   try {
-//     const studentCertificates = new PersistentMap<string,PersistentVector<Certificates | null>>('m');
-//     const data = studentCertificates.get(studentId);
-//     data?.push(certificate);
-//     studentCertificates.set(studentId, data!);
-//     return true;
-//   } catch (error) {
-//     logging.log(`error while uploading certificate in contract ${error}`);
-//     return false;
-//   }
-// }
+  // try {
+  // } catch (error) {
+  //   logging.log(`error while uploading certificate in contract ${error}`);
+  //   return false;
+  // }
+}
 // export function test(studentId:string):string {
 //   return "hello"
 // }
