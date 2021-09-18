@@ -6,7 +6,11 @@ import getConfig from './config'
 const { networkId } = getConfig(process.env.NODE_ENV || 'development')
 
 // JS code here
-
+document.getElementById("login").addEventListener("click", async (e) => {
+  e.preventDefault();
+  console.log("The button is clicked: ", accountId);
+  login();
+});
 
 // `nearInitPromise` gets called on page load
 window.nearInitPromise = initContract()
