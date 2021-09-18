@@ -1,5 +1,5 @@
 import {logout}from "../utils";
-document.getElementById("Sign-Out").addEventListener('click',(e)=>{
+document.getElementById("sign-out").addEventListener('click',(e)=>{
     e.preventDefault();
     logout();
 })
