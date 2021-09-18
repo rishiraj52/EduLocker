@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="upload-certificate.css">
+    <style>
+
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <img src="/assets/logo.svg" width="200px" height="70px" class="img-responsive" alt="EduLocker">
+        <div class="d-flex">
+          <a id="sign-out" href="#"style="text-decoration: none;">Sign Out</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+      <div class="detail">
+        <form action="backend.php" class="form">
+            <div class="user">
+                Student Username: <input type="text" name="" id="username">
+            </div>
+            <div class="file">
+                <div class="mb-3">
+                  <label for="formFileMultiple" class="form-label">Upload Certificate:</label>
+                  <input class="form-control" type="file" id="formFileMultiple" multiple>
+                </div>
+            </div>
+        </form>
+      </div>
+
+      <div id="submit">
+        <div class="button">
+          <input id="upload-button" type="submit" value="Upload" class="upload">
+          <input  id="cancel-button" type="submit" value="Cancel" class="cancel">
+        </div>
+      </div>
+</body>
+<script src="../js/upload certificate.js"></script>
+</html>
