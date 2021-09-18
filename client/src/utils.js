@@ -14,13 +14,14 @@ export async function initContract() {
 
   // Getting the Account ID. If still unauthorized, it's just empty string
   window.accountId = window.walletConnection.getAccountId()
-
+  console.log("accountId: ",accountId)
+  window.account = await near.account(accountId);
   // Initializing our contract APIs by contract name and configuration
   window.contract = await new Contract(window.walletConnection.account(), nearConfig.contractName, {
     // View methods are read only. They don't modify the state, but usually return some value.
-    viewMethods: ['getGreeting'],
+    viewMethods: ['getStudentPayFeesDate','getStudentCertificate'],
     // Change methods can modify the state. But you don't receive the returned value when called.
-    changeMethods: ['setGreeting'],
+    changeMethods: [''],
   })
 }
 
