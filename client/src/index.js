@@ -1,5 +1,6 @@
 import "regenerator-runtime/runtime";
 import studentDashboard from "./HTML/student-dashboard.html";
+import CBSEDashboard from "./HTML/CBSE-Dashboard.html";
 
 import { initContract, login, logout } from "./utils";
 
@@ -68,7 +69,7 @@ async function redirectToAuthPage() {
     const js = await res.json();
     console.log("response: ", js);
     if (js.role == "student") document.write(studentDashboard);
-    else window.location.replace("/html/CBSE-dashboard.html");
+    else document.write(CBSEDashboard);
   } catch (error) {
     console.log("err: ", error);
   }

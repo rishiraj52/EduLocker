@@ -6,6 +6,7 @@ export interface DayFees{
 }
 
 export interface Certificates{
-      class:string,
-      certificateID:PersistentVector<string>
+      studnetClass:string,
+      id:string,
+      cid:string
 }
