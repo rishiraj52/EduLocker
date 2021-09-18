@@ -1,16 +1,20 @@
+*{
+    font-size: 1.2rem;
+}
+
 .img-responsive{
     display: inline-block;
     width: 17% ;
     height: auto;
 }
 
-#SignOut{
+#sign-out{
     display: inline-block;
     position: absolute;
     top: 22px;
     right: 25px;
-    font-size: 20px;
-}
+    font-size: 26px;
+  }
 
 a:hover{
     color: blue;
@@ -22,59 +26,80 @@ a{
 }
 
 .detail{
-    display: flexbox;
+    display: flex;
+    justify-content: center;
     position: absolute;
     left: 30% ;
+    top: 25%;
+    color: rgb(14, 14, 138);
 }
 
 .item{
     padding: 2px;
     margin: 7px;
-    font-size: 17px;
+    font-size: 1.4rem;
 }
 
 .name{
-    margin-left: 99px;
+    margin-left: 145px;
+    border-width: 2px;
+
 }
 
 .rollnum{
-    margin-left: 30px;
+    margin-left: 36px;
+    /* border: 2px; */
+    border-width: 2px;
 }
 
 #cls{
-    margin-left: 159px;
+    margin-left: 240px;
+    border-width: 2px;
 }
 
 #fee{
-    margin-left: 113px;
+    margin-left: 168px;
+    border-width: 2px;
 }
 
 .feepay{
-    margin-left: 35px;
+    margin-left: 44px;
+    border-width: 2px;
+
 }
 
 .submit{
     margin-left: 10px;
     margin-right: 62px;
-    padding: 5px 13px;
+    padding: 6px 15px;
     color: rgb(255, 255, 255);
     background-color: blue;
     border-radius: 4px;
     border-color: blue;
 }
+.submit:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(34, 34, 190);
+    border-color: rgb(34, 34, 190);
+}
 
 .cancel{
     margin-left: 62px;
-    padding: 5px 13px;
+    padding: 6px 15px;
     color: rgb(255, 255, 255);
     background-color: red;
     border-radius: 4px;
     border-color:red;
 }
+.cancel:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(202, 24, 24);
+    border-color: rgb(202, 24, 24);
+}
 
 .button{
     display: flexbox;
     position: absolute;
-    top: 55%;
+    top: 67%;
     left: 32%;
 }
