@@ -1,1 +1,104 @@
 /* CSS here */
+*{
+    padding: 0;
+    margin: 0;
+  }
+  .img-responsive{
+    display: inline-block;
+    width: 17% ;
+    height: auto;
+  }
+  
+  #login{
+    display: inline-block;
+    position: absolute;
+    top: 22px;
+    right: 25px;
+    font-size: 20px;
+  
+  }
+  
+  .SignIn{
+    margin-right: 70px;
+  }
+  
+  a:hover{
+    color: blue;
+  }
+  
+  a{
+    text-decoration: none;
+  }
+  
+  .banner{
+    display: flex;
+  }
+  
+  .img-thumbnail{
+    max-width: 90%;
+    height: auto;
+    position: center;
+  }
+  
+  .heading{
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    font-size: inherit;
+  }
+  .content{
+    display: grid;
+    grid-template-columns: 0.9fr 0.9fr;
+    
+  }
+  
+  .colone{
+    /* margin: 4px; */
+    height: 250px;
+    /* width: 520px; */
+    border-right: 4px;
+    border-color: rgb(109, 23, 23);
+    align-items: center;
+  }
+  
+  .coltwo{
+    /* margin: 4px; */
+    height: 250px;
+    /* width: 520px; */
+    border-left: 4px;
+    border-color: rgb(109, 23, 23);
+    align-items: center;
+  }
+  
+  .rounded{
+    align-content: center;
+    display: inline-block;
+    height: 38%;
+    width: 19%;
+    position: center;
+    margin-bottom: 15px;
+  }
+  
+  h4{
+    font-size: 22px;
+    color: rgb(50, 50, 148);
+  
+  }
+  
+  .head{
+    align-items: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: normal;
+    text-align: center;
+    color: rgb(50, 50, 148);
+    padding: 0px 150px;
+  }
+  
+  .topic{
+    align-items: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: normal;
+    text-align: center;
+    color: rgb(89, 89, 168);
+    padding: 0px 150px;
+  }

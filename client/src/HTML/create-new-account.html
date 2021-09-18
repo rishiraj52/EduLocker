@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="create-new-account.css">
+  <title>create new account</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <img src="/assets/logo.svg" width="200px" height="70px" class="img-responsive" alt="EduLocker">
+        <div class="d-flex">
+          <a id="sign-out" href="#"style="text-decoration: none;">Sign Out</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="detail">
+    <form action="backend.php" class="inputs">
+      <div class="item">
+        Student Name: <input type="text" class="name" id="student-name">
+      </div>
+      <div class="item">
+        Username with Roll No.: <input type="text" class="rollnum" id="username-rollno">
+      </div>
+      <div class="item">
+        Class: <input type="number" name="class" id="cls" id="class">
+      </div>
+      <div class="item">
+        School Fees: <input type="number" name="fees amount" id="fee">
+      </div>
+      <div class="item">
+      Time period to pay fees: <input type="number" class="feepay" id="fees-id" >
+      </div>
+  </div>
+
+  <div class="button">
+    <input id="create-account-button" type="submit" value="Create account" class="submit">
+    <input id="cancel-button" type="submit" value="Cancel" class="cancel">
+  </div>
+  </form>
+
+</body>
+<script src="../js/create-new-account.js"></script>
+</html>

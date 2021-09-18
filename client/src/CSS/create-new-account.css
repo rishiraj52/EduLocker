@@ -1,0 +1,80 @@
+.img-responsive{
+    display: inline-block;
+    width: 17% ;
+    height: auto;
+}
+
+#SignOut{
+    display: inline-block;
+    position: absolute;
+    top: 22px;
+    right: 25px;
+    font-size: 20px;
+}
+
+a:hover{
+    color: blue;
+}
+
+a{
+    display: flexbox;
+    text-decoration: none;
+}
+
+.detail{
+    display: flexbox;
+    position: absolute;
+    left: 30% ;
+}
+
+.item{
+    padding: 2px;
+    margin: 7px;
+    font-size: 17px;
+}
+
+.name{
+    margin-left: 99px;
+}
+
+.rollnum{
+    margin-left: 30px;
+}
+
+#cls{
+    margin-left: 159px;
+}
+
+#fee{
+    margin-left: 113px;
+}
+
+.feepay{
+    margin-left: 35px;
+}
+
+.submit{
+    margin-left: 10px;
+    margin-right: 62px;
+    padding: 5px 13px;
+    color: rgb(255, 255, 255);
+    background-color: blue;
+    border-radius: 4px;
+    border-color: blue;
+}
+
+.cancel{
+    margin-left: 62px;
+    padding: 5px 13px;
+    color: rgb(255, 255, 255);
+    background-color: red;
+    border-radius: 4px;
+    border-color:red;
+}
+
+.button{
+    display: flexbox;
+    position: absolute;
+    top: 55%;
+    left: 32%;
+}
