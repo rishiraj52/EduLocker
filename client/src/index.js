@@ -10,6 +10,11 @@ document.getElementById('sign-out').addEventListener('click',(e)=>{
   e.preventDefault();
   logout();
 })
+document.getElementById("login").addEventListener("click", async (e) => {
+  e.preventDefault();
+  console.log("The button is clicked: ", accountId);
+  login();
+});
 
 // `nearInitPromise` gets called on page load
 window.nearInitPromise = initContract()
