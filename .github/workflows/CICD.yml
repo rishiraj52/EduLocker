@@ -14,6 +14,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Creating .near-credentials
+      working-directory: ./client
+      run: |
+        mkdir -p ${{ github.workspace }}/.near-credentials
+        mv dev-1631945989515-3587104.json ${{ github.workspace }}/.near-credentials
     - name: Installing Contract dependencies
       working-directory: ./client/contract
       run: npm install
