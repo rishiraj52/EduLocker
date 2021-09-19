@@ -17,7 +17,7 @@ if (process.env.NODE_ENV == "production") {
   const path = require("path");
   app.use(express.static(path.join(__dirname, "/dist")));
   app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "dist", "index.html"));
+    res.sendFile(path.join(__dirname, "/dist", "index.html"));
   });
 } else {
   app.get("/", (req, res) => {
@@ -40,7 +40,7 @@ app.post("/addUser", (req, res) => {
 app.listen(PORT, () => {
   try {
     console.log(`Listening at PORT:${PORT}`);
-    // client.connect();
+    client.connect();
     
   } catch (error) {
     console.log("error while connecting to DB: ",error)
