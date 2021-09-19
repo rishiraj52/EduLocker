@@ -2,22 +2,22 @@ import { logging, PersistentMap, PersistentVector } from "near-sdk-as";
 import { DayFees, Certificates } from "./model";
 
 export function getStudentPayFeesDate(studentId: string): DayFees | null {
-  const data = new PersistentMap<string, PersistentVector<DayFees>>("m");
+  const data = new PersistentMap<string, PersistentVector<DayFees>>("mD");
   return data.get(studentId)![0];
 }
 export function getStudentCertificate(studentId: string): PersistentVector<Certificates | null> | null {
   const data = new PersistentMap<string, PersistentVector<Certificates | null>>(
-    "m"
+    "mC"
   );
   return data.get(studentId);
 }
 export function createStudentID(studentId: string, dayFees: DayFees[]): bool {
-  const data = new PersistentVector<DayFees>("m");
+  const data = new PersistentVector<DayFees>("vD");
     for (let index = 0; index < dayFees.length; index++) {
       data.push(dayFees[index]);
     }
     const studentData = new PersistentMap<string, PersistentVector<DayFees>>(
-      "m"
+      "mD"
     );
     studentData.set(studentId, data);
     // setStudentCrtificateAsNull(studentId);
@@ -40,7 +40,7 @@ export function createStudentID(studentId: string, dayFees: DayFees[]): bool {
 }
 
 export function uploadStudentCertificate(studentId:string,certificate: Certificates): bool {
-  const studentCertificates = new PersistentMap<string,PersistentVector<Certificates | null>>('m');
+  const studentCertificates = new PersistentMap<string,PersistentVector<Certificates | null>>('mC');
   const data = studentCertificates.getSome(studentId);
   if(data !==null){
     data.push(certificate);
