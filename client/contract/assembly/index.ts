@@ -45,7 +45,7 @@ export function uploadStudentCertificate(studentId:string,certificate: Certifica
   if(data !==null){
     data.push(certificate);
   }
-  studentCertificates.set(studentId, data!);
+  studentCertificates.set(studentId, data);
   return true;
   
   // try {

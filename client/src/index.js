@@ -5,7 +5,7 @@ import CBSEDashboard from "./HTML/CBSE-Dashboard.html";
 import { initContract, login, logout } from "./utils";
 
 import getConfig from "./config";
-const { networkId } = getConfig(process.env.NODE_ENV || "development");
+const { networkId } = getConfig("development");
 
 // JS code here
 // document.getElementById('sign-out').addEventListener('click',(e)=>{
