@@ -28,9 +28,6 @@ a{
 .detail{
     display: flex;
     justify-content: center;
-    position: absolute;
-    left: 30% ;
-    top: 25%;
     color: rgb(14, 14, 138);
 }
 
@@ -98,8 +95,8 @@ a{
 }
 
 .button{
-    display: flexbox;
-    position: absolute;
-    top: 67%;
-    left: 32%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.3rem;
 }

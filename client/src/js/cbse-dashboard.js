@@ -1,6 +1,6 @@
 import {logout}from "../utils";
 // import {cancelButon} from "./upload-certificate";
-import uploadCertificate from "../HTML/upload-certificate.html";
+import createNewAccount from "../HTML/create-new-account.html";
 
 let isUploadLoaded = false;
 document.getElementById("sign-out").addEventListener('click',(e)=>{
@@ -10,6 +10,11 @@ document.getElementById("sign-out").addEventListener('click',(e)=>{
 
 document.getElementById('create-new-student-account').addEventListener('click',(e)=>{
     e.preventDefault();
+    if(!isUploadLoaded){
+        document.getElementById('inject-here').innerHTML =createNewAccount;
+        // document.write(createNewAccount);
+        isUploadLoaded=true;
+    }
 })
 
 document.getElementById('upload-certificate').addEventListener('click',(e)=>{
