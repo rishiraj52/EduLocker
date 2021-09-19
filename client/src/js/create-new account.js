@@ -78,4 +78,3 @@ document.getElementById("cancel-button").addEventListener("click", (e) => {
   document.getElementById("fee").value= "";
   document.getElementById("fees-id").value = "";
 });
-console.log("hello")
