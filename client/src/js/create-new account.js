@@ -1,4 +1,6 @@
 import { logout } from "../utils";
+import { sha256 } from 'js-sha256';
+
 document.getElementById("sign-out").addEventListener("click", (e) => {
   e.preventDefault();
   logout();
@@ -28,11 +30,16 @@ document
         dayFees:arr
     });
     console.log("reply from smart contract: ",response);
+    const username=`${usernamewithrollno}.testnet`;
+    // const hash=sha256(username).substring(0,43);
+    // console.log("creating account: ",hash.length)
+    // const rep=await walletConnection.account().createAccount('testnet112343.testnet','AhJcBqwrYf1r4itudL','10000000000000000000');
     const userObject={
-        accountId:usernamewithrollno,
+        accountId:username,
         studentName,
         studentClass,
     }
+    console.log("rep: ",rep)
     sendUserDetailsToServer(userObject);
     } catch (error) {
         console.log("err: ",error)

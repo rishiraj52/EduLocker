@@ -13,6 +13,8 @@ document.getElementById('create-new-student-account').addEventListener('click',(
     if(!isUploadLoaded){
         // document.getElementById('inject-here').innerHTML =createNewAccount;
         document.write(createNewAccount);
+        alert("First create a new account on redirected page then come back here and fill in details with that new username");
+        document.open('https://wallet.testnet.near.org/','','_blank')
         isUploadLoaded=true;
     }
 })
