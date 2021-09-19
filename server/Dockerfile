@@ -12,4 +12,4 @@ RUN npm install --only=prod
 
 EXPOSE 5000
 
-CMD ["npm --trace-warnings","start"]
+CMD ["npm","start"]
