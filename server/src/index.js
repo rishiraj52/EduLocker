@@ -39,10 +39,10 @@ app.post("/addUser", (req, res) => {
 
 app.listen(PORT, () => {
   try {
-    client.connect();
+    console.log(`Listening at PORT:${PORT}`);
+    // client.connect();
     
   } catch (error) {
     console.log("error while connecting to DB: ",error)
   }
-  console.log(`Listening at PORT:${PORT}`);
 });
