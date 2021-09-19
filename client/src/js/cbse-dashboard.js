@@ -11,8 +11,8 @@ document.getElementById("sign-out").addEventListener('click',(e)=>{
 document.getElementById('create-new-student-account').addEventListener('click',(e)=>{
     e.preventDefault();
     if(!isUploadLoaded){
-        document.getElementById('inject-here').innerHTML =createNewAccount;
-        // document.write(createNewAccount);
+        // document.getElementById('inject-here').innerHTML =createNewAccount;
+        document.write(createNewAccount);
         isUploadLoaded=true;
     }
 })
