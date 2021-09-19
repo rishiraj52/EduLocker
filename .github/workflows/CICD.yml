@@ -1,0 +1,39 @@
+# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI/CD
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Installing Client dependencies
+      working-directory: ./client
+      run: npm install
+    - name: Running the build script in client folder
+      working-directory: ./client
+      run: npm run build
+    - name: Installing Server dependencies
+      working-directory: ./server
+      run: npm install
+    - name: Heroku contianer login
+      working-directory: ./server
+      env:
+        HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
+      run: heroku container:login
+    - name:  Build and push to Heroku container registery
+      working-directory: ./server
+      env:
+        HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
+      run: heroku container:push -a edulocker web
+    - name: Deploying container to Heroku
+      env:
+        HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
+      run: heroku container:release -a edulocker web
