@@ -30,7 +30,7 @@ jobs:
       working-directory: ./client
       env:
           CONTRACT_NAME: ${{secrets.CONTRACT_NAME}}
-      run: npm run deploy
+      run: npm run build:web
     - name: Installing Server dependencies
       working-directory: ./server
       run: npm install
