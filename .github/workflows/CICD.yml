@@ -22,11 +22,13 @@ jobs:
       run: npm install
     - name: Running the build script in client folder
       working-directory: ./client
+      env:
+          CONTRACT_NAME: ${{secrets.CONTRACT_NAME}}
       run: npm run build
     - name: Installing Server dependencies
       working-directory: ./server
       run: npm install
-    - name: Heroku contianer login
+    - name: Heroku container login
       working-directory: ./server
       env:
         HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
