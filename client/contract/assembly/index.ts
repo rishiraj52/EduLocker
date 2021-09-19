@@ -3,13 +3,13 @@ import { DayFees, Certificates } from "./model";
 
 export function getStudentPayFeesDate(studentId: string): DayFees | null {
   const data = new PersistentMap<string, PersistentVector<DayFees>>("mD");
-  return data.get(studentId)![0];
+  return data.getSome(studentId)[0];
 }
 export function getStudentCertificate(studentId: string): PersistentVector<Certificates | null> | null {
   const data = new PersistentMap<string, PersistentVector<Certificates | null>>(
     "mC"
   );
-  return data.get(studentId);
+  return data.getSome(studentId);
 }
 export function createStudentID(studentId: string, dayFees: DayFees[]): bool {
   const data = new PersistentVector<DayFees>("vD");

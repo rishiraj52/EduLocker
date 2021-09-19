@@ -4,9 +4,11 @@ import {PersistentVector} from 'near-sdk-as';
 export class DayFees{
       day:i32;
       fees:string;
-      constructor(day:i32,fees:string){
+      schoolId:string;
+      constructor(day:i32,fees:string,schoolId:string){
             this.day=day;
             this.fees=fees;
+            this.schoolId=schoolId;
       }
 }
 

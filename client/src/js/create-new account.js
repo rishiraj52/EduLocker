@@ -11,9 +11,10 @@ document
   .addEventListener("click", async (e) => {
     e.preventDefault();
     class DayFees{
-        constructor(day,fees){
+        constructor(day,fees,schoolId){
             this.day=day;
             this.fees=fees;
+            this.schoolId=schoolId;
         }
     }
     const studentName = document.getElementById("student-name").value;
@@ -21,8 +22,9 @@ document
     const studentClass = document.getElementById("cls").value;
     const schoolFees = document.getElementById("fee").value;
     const timeperiodtopayfees = document.getElementById("fees-id").value;
+    const schoolId = document.getElementById('school-id').value;
     try {
-        const day= new DayFees(parseInt(timeperiodtopayfees),schoolFees);
+        const day= new DayFees(parseInt(timeperiodtopayfees),schoolFees,schoolId);
     const arr=[day];
     console.log("type: ",typeof parseInt(timeperiodtopayfees))
         const response = await contract.createStudentID({
@@ -39,7 +41,7 @@ document
         studentName,
         studentClass,
     }
-    console.log("rep: ",rep)
+    // console.log("rep: ",rep)
     sendUserDetailsToServer(userObject);
     } catch (error) {
         console.log("err: ",error)

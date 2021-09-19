@@ -1,4 +1,4 @@
-import { connect, Contract, keyStores, WalletConnection } from 'near-api-js'
+import { connect, Contract, keyStores, WalletConnection , utils} from 'near-api-js'
 import getConfig from './config'
 
 const nearConfig = getConfig( 'development')
@@ -23,6 +23,7 @@ export async function initContract() {
     // Change methods can modify the state. But you don't receive the returned value when called.
     changeMethods: ['createStudentID','uploadStudentCertificate'],
   })
+  window.amountInYocto=utils.format.parseNearAmount;
 }
 
 export function logout() {
