@@ -8,7 +8,7 @@
 /.vscode
 .cache/
 #keys
-/neardev
+# /neardev
 
 # testing
 /coverage
